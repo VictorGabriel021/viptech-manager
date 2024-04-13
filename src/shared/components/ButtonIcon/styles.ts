@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Button } from "@mui/material";
 
-import { Colors } from "../../constants/color";
+import { Colors } from "shared/constants/color";
 
 export const ButtonContainer = styled.div`
   display: flex;

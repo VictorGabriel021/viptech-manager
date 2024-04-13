@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Colors } from "../../constants/color";
+import { Colors } from "shared/constants/color";
 
 export const Header = styled.header`
   display: flex;

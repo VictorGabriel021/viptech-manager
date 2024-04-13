@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import Button, { ButtonProps } from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-import { Colors } from "../../constants/color";
+import { Colors } from "shared/constants/color";
 
 interface IButtonProps {
   children: ReactNode;

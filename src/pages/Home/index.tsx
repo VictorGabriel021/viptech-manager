@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   Container,
   Content,
@@ -7,9 +9,9 @@ import {
   Image,
 } from "./styles";
 
-import TwoPeopleWorking from "../../assets/images/two-people-working.png";
+import TwoPeopleWorking from "assets/images/two-people-working.png";
 
-import ButtonIcon from "../../shared/components/ButtonIcon";
+import ButtonIcon from "shared/components/ButtonIcon";
 
 const Home = () => {
   return (
@@ -25,7 +27,9 @@ const Home = () => {
           intuitivo, permitindo operações <br /> CRUD de forma eficiente e ágil.
         </Description>
 
-        <ButtonIcon text="Gerencie os usuários" />
+        <Link to="/users">
+          <ButtonIcon text="Gerencie os usuários" />
+        </Link>
       </Content>
 
       <ImageContainer>

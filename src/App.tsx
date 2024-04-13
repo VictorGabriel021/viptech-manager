@@ -1,8 +1,8 @@
-import Navbar from "./shared/components/Navbar";
-
 import Router from "./routes";
 
-import { CardContainer, CardContent } from "./shared/styles/Card/styles";
+import { CardContainer, CardContent } from "shared/styles/Card/styles";
+
+import Navbar from "shared/components/Navbar";
 
 function App() {
   return (

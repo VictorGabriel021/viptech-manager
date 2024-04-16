@@ -1,4 +1,4 @@
 import Home from "pages/Home";
-import Users from "pages/Users";
+import NotFound from "pages/NotFound";
 
-export { Home, Users };
+export { Home, NotFound };

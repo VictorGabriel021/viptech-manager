@@ -67,14 +67,14 @@ const RepresentativeData = ({
       <FieldArray name={formField.representative.name}>
         {({ remove, push }) => (
           <Container>
-            <ButtonContainer>
-              {!values.representative.length && (
-                <ErrorMessage name={`${formField.representative.name}`}>
-                  {(msg) => <TextError>{msg}</TextError>}
-                </ErrorMessage>
-              )}
+            {!isDisable && (
+              <ButtonContainer>
+                {!values.representative.length && (
+                  <ErrorMessage name={`${formField.representative.name}`}>
+                    {(msg) => <TextError>{msg}</TextError>}
+                  </ErrorMessage>
+                )}
 
-              {!isDisable && (
                 <CustomButton
                   variant="contained"
                   color="primary"
@@ -89,8 +89,8 @@ const RepresentativeData = ({
                 >
                   Adicionar
                 </CustomButton>
-              )}
-            </ButtonContainer>
+              </ButtonContainer>
+            )}
 
             {values.representative.length > 0 && (
               <RepresentativeContainer>

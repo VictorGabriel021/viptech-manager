@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { ButtonsContainer } from "../styles";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   getUserDataFormCreate,
@@ -10,8 +12,6 @@ import {
 import { RootState } from "context/store";
 
 import { Form, Formik } from "formik";
-
-import { ButtonsContainer } from "./styles";
 
 import HorizontalLinearStepper, {
   handleBack,

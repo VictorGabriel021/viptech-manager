@@ -6,7 +6,8 @@ import { Formik, Form } from "formik";
 
 import { CircularProgress } from "@mui/material";
 
-import { Container, ButtonsContainer } from "./styles";
+import { Container } from "./styles";
+import { ButtonsContainer } from "../styles";
 
 import { AddressData, PersonalData, Representative } from "../components/Form";
 

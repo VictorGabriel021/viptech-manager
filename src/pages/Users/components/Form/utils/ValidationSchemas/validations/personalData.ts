@@ -23,15 +23,15 @@ export const getPersonalDataValidationForm = () => {
       .nullable()
       .required(email.requiredErrorMsg)
       .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9\s]).{8,}$/,
+        /^(?!\.)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
         "E-mail inválido"
       ),
     [password.name]: Yup.string()
       .nullable()
       .required(password.requiredErrorMsg)
       .matches(
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%?$*&@#!_.,-]).{8,}$/,
-        "Insira uma combinação de 8 dígitos ou mais contendo pelo menos 1 letra minúscula, 1 letra maiúscula, 1 número e 1 caractere especial: (-_!@#$%&*.,?)"
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9\s]).{8,}$/,
+        "Insira uma combinação de 8 dígitos ou mais contendo pelo menos 1 letra minúscula, 1 letra maiúscula, 1 número e 1 caractere especial como: (-+_!@#$%^&*.,?)"
       ),
   });
 };

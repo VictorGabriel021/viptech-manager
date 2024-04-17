@@ -17,7 +17,7 @@ import useModal from "shared/Hooks/useModal";
 
 import AppModal from "shared/components/AppModal";
 import ResourceFound from "shared/components/ResourceFound";
-import CustomButton from "shared/components/CustomButton";
+import { CustomButton } from "shared/components/Buttons";
 import TitleBack from "shared/components/TitleBack";
 import Loading from "shared/components/Loading";
 

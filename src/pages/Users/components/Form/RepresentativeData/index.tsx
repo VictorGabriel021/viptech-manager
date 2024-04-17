@@ -5,9 +5,8 @@ import { InputContainer } from "../styles/styles";
 import { TextError } from "shared/styles/Error/styles";
 import { DeleteIconCustom } from "shared/styles/Icons/styles";
 
-import CustomButton from "shared/components/CustomButton";
-import SelectCustom from "shared/components/SelectCustom";
-import { InputTextFormik } from "shared/components/InputTextFormik";
+import { CustomButton } from "shared/components/Buttons";
+import { InputTextFormik, SelectCustom } from "shared/components/Inputs";
 
 import { formatPhone, formatRG } from "shared/utils/functions/formatters";
 

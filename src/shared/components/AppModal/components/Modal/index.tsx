@@ -4,7 +4,7 @@ import { ModalContainer } from "./styles";
 
 import { Box, CircularProgress, Dialog } from "@mui/material";
 
-import CustomButton from "shared/components/CustomButton";
+import { CustomButton } from "shared/components/Buttons";
 
 export interface IModalButtonsProps {
   text: string;

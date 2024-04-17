@@ -1,6 +1,6 @@
 import { InputContainer } from "../styles/styles";
 
-import { InputTextFormik } from "shared/components/InputTextFormik";
+import { InputTextFormik, InputPassword } from "shared/components/Inputs";
 
 import { formatCPF } from "shared/utils/functions/formatters";
 
@@ -52,12 +52,10 @@ const PersonalData = ({ setFieldValue, isDisable }: IPersonalData) => {
           disabled={isDisable}
           autoComplete="username"
         />
-        <InputTextFormik
+        <InputPassword
           name={formField.password.name}
           label={formField.password.label}
           disabled={isDisable}
-          type="password"
-          autoComplete="current-password"
         />
       </InputContainer>
     </div>

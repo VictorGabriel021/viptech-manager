@@ -11,7 +11,7 @@ import {
 
 import TwoPeopleWorking from "assets/images/two-people-working.png";
 
-import ButtonIcon from "shared/components/ButtonIcon";
+import { ButtonIcon } from "shared/components/Buttons";
 
 const Home = () => {
   return (

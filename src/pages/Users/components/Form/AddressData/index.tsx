@@ -4,8 +4,7 @@ import { CircularProgress, InputAdornment } from "@mui/material";
 
 import { InputContainer } from "../styles/styles";
 
-import { InputTextFormik } from "shared/components/InputTextFormik";
-import SelectCustom from "shared/components/SelectCustom";
+import { InputTextFormik, SelectCustom } from "shared/components/Inputs";
 
 import { brazilianStatesOptions } from "shared/constants/user";
 

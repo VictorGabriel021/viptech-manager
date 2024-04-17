@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-import CustomButton from "shared/components/CustomButton";
+import { CustomButton } from "shared/components/Buttons";
 
 interface ITitleAndActionsProps {
   title: string;

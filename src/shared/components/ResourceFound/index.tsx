@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { Alert } from "@mui/material";
 
-import CustomButton from "shared/components/CustomButton";
+import { CustomButton } from "shared/components/Buttons";
 
 import { ButtonContainer } from "./styles";
 

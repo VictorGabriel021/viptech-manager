@@ -18,7 +18,7 @@ import HorizontalLinearStepper, {
   handleNext,
 } from "shared/components/Stepper";
 import AppModal from "shared/components/AppModal";
-import CustomButton from "shared/components/CustomButton";
+import { CustomButton } from "shared/components/Buttons";
 import TitleBack from "shared/components/TitleBack";
 
 import {

@@ -2,9 +2,9 @@ import { Form, Formik } from "formik";
 
 import { ButtonContainer, InputContainer } from "./styles";
 
-import { InputTextFormik } from "shared/components/InputTextFormik";
-import CustomButton from "shared/components/CustomButton";
-import SelectCustom from "shared/components/SelectCustom";
+import { InputTextFormik, SelectCustom } from "shared/components/Inputs";
+
+import { CustomButton } from "shared/components/Buttons";
 
 import { brazilianStatesOptions } from "shared/constants/user";
 

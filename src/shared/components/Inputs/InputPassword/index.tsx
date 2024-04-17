@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { OutlinedInputCustom } from "./styles";
+
 import { useField } from "formik";
 
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -11,7 +13,6 @@ import {
   IconButton,
   InputAdornment,
   InputLabel,
-  OutlinedInput,
 } from "@mui/material";
 
 interface InputpasswordProps {
@@ -42,7 +43,7 @@ const InputPassword: React.FC<InputpasswordProps> = ({
   return (
     <FormControl variant="outlined" error={!!errorText} fullWidth>
       <InputLabel>{label}</InputLabel>
-      <OutlinedInput
+      <OutlinedInputCustom
         {...field}
         disabled={disabled}
         type={showPassword ? "text" : "password"}

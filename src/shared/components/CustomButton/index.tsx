@@ -1,49 +1,21 @@
 import { ReactNode } from "react";
 
-import { styled } from "@mui/material/styles";
-import Button, { ButtonProps } from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+import { CustomizedButton } from "./styles";
+
+import { ButtonProps } from "@mui/material";
 
 import { Colors } from "shared/constants/color";
 
-interface IButtonProps {
+export type Variant = "contained" | "outlined" | "text";
+
+interface IButtonProps extends Omit<ButtonProps, "color"> {
   children: ReactNode;
-  variant: string;
+  variant: Variant;
+  color: keyof typeof Colors;
 }
 
-interface IButtonTextProps {
-  children: ReactNode;
-}
+const CustomButton = ({ children, ...rest }: IButtonProps) => {
+  return <CustomizedButton {...rest}>{children}</CustomizedButton>;
+};
 
-interface IButtonIconProps {
-  children: ReactNode;
-}
-
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(Colors.primary),
-  backgroundColor: Colors.primary,
-  "&:hover": {
-    backgroundColor: Colors.secondary,
-  },
-}));
-
-function CustomizedButton({ children, ...rest }: IButtonProps) {
-  return (
-    <Stack spacing={2} direction="row" {...rest}>
-      {children}
-    </Stack>
-  );
-}
-
-function ButtonText({ children }: IButtonTextProps) {
-  return <ColorButton>{children}</ColorButton>;
-}
-
-function ButtonIcon({ children }: IButtonIconProps) {
-  return <>{children}</>;
-}
-
-CustomizedButton.Text = ButtonText;
-CustomizedButton.Icon = ButtonIcon;
-
-export { CustomizedButton };
+export default CustomButton;

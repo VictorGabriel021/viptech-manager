@@ -13,7 +13,7 @@ export const ButtonContainer = styled.div`
     }
 
     div {
-      background-color: ${Colors.tertiary};
+      background-color: ${Colors.secondaryHover};
     }
   }
 `;

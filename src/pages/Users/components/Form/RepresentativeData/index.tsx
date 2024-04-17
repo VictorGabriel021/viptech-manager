@@ -11,12 +11,13 @@ import { InputTextFormik } from "shared/components/InputTextFormik";
 
 import { formatPhone, formatRG } from "shared/utils/functions/formatters";
 
-import { degreeOfKinshipOptions } from "shared/constants/user";
 import { IRepresentativeDataFormValues } from "../utils/InitialValues/representativeDataForm";
 import {
   SetUserFormFieldValues,
   getRepresentativeInputsFormInformation,
 } from "../utils/InputsModel";
+
+import { degreeOfKinshipOptions } from "shared/constants/user";
 
 interface IRepresentativeData {
   values: IRepresentativeDataFormValues;

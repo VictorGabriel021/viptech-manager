@@ -32,6 +32,35 @@ const RepresentativeData = ({
 }: IRepresentativeData) => {
   const formField = getRepresentativeInputsFormInformation();
 
+  const changeCellPhoneHandler = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const regex = /^[0-9]{0,11}$/;
+
+    const phoneNumber = event.target.value.replace(/[^\d]/g, "");
+
+    if (phoneNumber === "" || regex.test(phoneNumber)) {
+      setFieldValue(
+        `${formField.representative.name}.${index}.cellphone` as any,
+        formatPhone(phoneNumber)
+      );
+    }
+  };
+
+  const changeRgHandler = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const regex = /^[A-Za-z0-9\b/./-]+$/;
+    if (event.target.value === "" || regex.test(event.target.value)) {
+      setFieldValue(
+        `${formField.representative.name}.${index}.rg` as any,
+        formatRG(event.target.value)
+      );
+    }
+  };
+
   return (
     <div>
       <h3>Dados do representante</h3>
@@ -93,18 +122,7 @@ const RepresentativeData = ({
                         }}
                         onChange={(
                           event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                          const regex = /^[A-Za-z0-9\b/./-]+$/;
-                          if (
-                            event.target.value === "" ||
-                            regex.test(event.target.value)
-                          ) {
-                            setFieldValue(
-                              `${formField.representative.name}.${index}.rg` as any,
-                              formatRG(event.target.value)
-                            );
-                          }
-                        }}
+                        ) => changeRgHandler(event, index)}
                       />
                       <InputTextFormik
                         name={`${formField.representative.name}.${index}.cellphone`}
@@ -112,21 +130,7 @@ const RepresentativeData = ({
                         disabled={isDisable}
                         onChange={(
                           event: React.ChangeEvent<HTMLInputElement>
-                        ) => {
-                          const regex = /^[0-9]{0,11}$/;
-
-                          const phoneNumber = event.target.value.replace(
-                            /[^\d]/g,
-                            ""
-                          );
-
-                          if (phoneNumber === "" || regex.test(phoneNumber)) {
-                            setFieldValue(
-                              `${formField.representative.name}.${index}.cellphone` as any,
-                              formatPhone(phoneNumber)
-                            );
-                          }
-                        }}
+                        ) => changeCellPhoneHandler(event, index)}
                       />
                     </InputContainer>
                   </div>

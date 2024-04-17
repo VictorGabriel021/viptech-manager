@@ -17,6 +17,13 @@ interface IPersonalData {
 const PersonalData = ({ setFieldValue, isDisable }: IPersonalData) => {
   const formField = getPersonalInputsFormInformation();
 
+  const changeCpfHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const regex = /^[0-9\b/./-]+$/;
+    if (event.target.value === "" || regex.test(event.target.value)) {
+      setFieldValue(formField.cpf.name, formatCPF(event.target.value));
+    }
+  };
+
   return (
     <div>
       <h3>Dados pessoais</h3>
@@ -36,12 +43,7 @@ const PersonalData = ({ setFieldValue, isDisable }: IPersonalData) => {
           name={formField.cpf.name}
           label={formField.cpf.label}
           disabled={isDisable}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            const regex = /^[0-9\b/./-]+$/;
-            if (event.target.value === "" || regex.test(event.target.value)) {
-              setFieldValue(formField.cpf.name, formatCPF(event.target.value));
-            }
-          }}
+          onChange={changeCpfHandler}
         />
         <InputTextFormik
           name={formField.email.name}

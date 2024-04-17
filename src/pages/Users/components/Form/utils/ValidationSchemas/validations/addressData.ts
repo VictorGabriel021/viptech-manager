@@ -6,7 +6,10 @@ export const getAddressDataValidationForm = () => {
   const { cep, city, uf, street, number } = getAddressInputsFormInformation();
 
   return Yup.object().shape({
-    [cep.name]: Yup.string().nullable().required(cep.requiredErrorMsg),
+    [cep.name]: Yup.string()
+      .nullable()
+      .required(cep.requiredErrorMsg)
+      .min(9, "CEP inválido"),
     [city.name]: Yup.string().nullable().required(city.requiredErrorMsg),
     [uf.name]: Yup.string().nullable().required(uf.requiredErrorMsg),
     [street.name]: Yup.string().nullable().required(street.requiredErrorMsg),

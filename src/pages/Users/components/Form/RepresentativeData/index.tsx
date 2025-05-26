@@ -97,7 +97,10 @@ const RepresentativeData = ({
                 {values.representative.map((_, index) => (
                   <div key={index}>
                     {!isDisable && index !== 0 && (
-                      <DeleteIconCustom onClick={() => remove(index)} />
+                      <DeleteIconCustom
+                        onClick={() => remove(index)}
+                        data-cy={`representative${index}`}
+                      />
                     )}
                     <InputContainer>
                       <InputTextFormik

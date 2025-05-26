@@ -1,0 +1,26 @@
+{
+    "name": "João",
+    "lastname": "Felipe",
+    "cpf": "339.539.740-84",
+    "email": "victorgcp@gmail.com",
+    "password": "Victor2@9",
+    "cep": "49063-025",
+    "number": "50",
+    "street": "Rua B",
+    "city": "Aracaju",
+    "uf": "SE",
+    "representative": [
+        {
+            "name": "Pedro",
+            "degreeOfKinship": "Irmão",
+            "rg": "15.784.159-0",
+            "cellphone": "(43) 99845-5129"
+        },
+        {
+            "name": "Roger",
+            "degreeOfKinship": "Pai",
+            "rg": "21.561.580-4",
+            "cellphone": "(43) 99623-1523"
+        }
+    ]
+}

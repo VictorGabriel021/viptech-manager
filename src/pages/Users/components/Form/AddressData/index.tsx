@@ -88,11 +88,13 @@ const AddressData = ({
     setIsLoadingAdress(false);
   };
 
-  const changeCepHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeCepHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const regex = /^[0-9\b/-]+$/;
     if (event.target.value === "" || regex.test(event.target.value)) {
       setFieldValue(formField.cep.name, formatCEP(event.target.value));
     }
+
+    await onBlurCep(event);
   };
 
   return (
@@ -106,9 +108,6 @@ const AddressData = ({
           label={formField.cep.label}
           disabled={isDisable}
           variant="outlined"
-          onBlur={async (event: React.ChangeEvent<HTMLInputElement>) => {
-            await onBlurCep(event);
-          }}
           onChange={changeCepHandler}
           InputProps={{
             endAdornment: (

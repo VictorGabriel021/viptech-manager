@@ -38,6 +38,7 @@ const SelectCustom: React.FC<SelectCustomProps> = ({
       <InputLabel id={label}>{label}</InputLabel>
       <Select
         {...rest}
+        name={field.name}
         value={field.value || ""}
         onChange={handleChange}
         disabled={disabled}

@@ -1,26 +1,56 @@
-{
-    "name": "João",
-    "lastname": "Felipe",
-    "cpf": "339.539.740-84",
-    "email": "victorgcp@gmail.com",
-    "password": "Victor2@9",
-    "cep": "49063-025",
-    "number": "50",
-    "street": "Rua B",
-    "city": "Aracaju",
-    "uf": "SE",
-    "representative": [
-        {
-            "name": "Pedro",
-            "degreeOfKinship": "Irmão",
-            "rg": "15.784.159-0",
-            "cellphone": "(43) 99845-5129"
-        },
-        {
-            "name": "Roger",
-            "degreeOfKinship": "Pai",
-            "rg": "21.561.580-4",
-            "cellphone": "(43) 99623-1523"
-        }
-    ]
-}
+[
+    {
+        "id": "48cf12ac-113b-0fd0-90ce-83626aec223b",
+        "name": "João",
+        "lastname": "Felipe",
+        "cpf": "339.539.740-84",
+        "email": "victorgcp@gmail.com",
+        "password": "Victor2@9",
+        "cep": "49063-025",
+        "number": "50",
+        "street": "Rua B",
+        "city": "Aracaju",
+        "uf": "SE",
+        "representative": [
+            {
+                "name": "Pedro",
+                "degreeOfKinship": "Irmão",
+                "rg": "15.784.159-0",
+                "cellphone": "(43) 99845-5129"
+            },
+            {
+                "name": "Roger",
+                "degreeOfKinship": "Pai",
+                "rg": "21.561.580-4",
+                "cellphone": "(43) 99623-1523"
+            }
+        ]
+    },
+    {
+        "id": "48cf12ac-113b-0fd0-90ce-83626aec223b",
+        "name": "John",
+        "lastname": "Newman",
+        "cpf": "458.454.770-00",
+        "email": "john@gmail.com",
+        "password": "Johnasd2@9",
+        "cep": "86430-000",
+        "number": "1",
+        "street": "Rua89",
+        "city": "Santo Antônio da Platina",
+        "uf": "PR",
+        "representative": [
+            {
+                "name": "André",
+                "degreeOfKinship": "Filho",
+                "rg": "44.784.159-0",
+                "cellphone": "(43) 99845-9129"
+            },
+            {
+                "name": "Roger",
+                "degreeOfKinship": "Pai",
+                "rg": "21.561.580-4",
+                "cellphone": "(43) 99623-1523"
+            }
+        ]
+    }
+]

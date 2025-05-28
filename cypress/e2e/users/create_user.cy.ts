@@ -15,10 +15,10 @@ describe("Successful user registration flow", () => {
 
   it("Should create a user", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
-      UserFormPage.fillRepresentativeData(user);
-      UserFormPage.fillConfirmData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
+      UserFormPage.fillRepresentativeData(user[0]);
+      UserFormPage.fillConfirmData(user[0]);
     });
   });
 });
@@ -42,7 +42,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails invalid cpf in step 1", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData({ ...user, cpf: "11111115844" });
+      UserFormPage.fillPersonalData({ ...user[0], cpf: "11111115844" });
     });
 
     cy.get("[aria-invalid=true][name=cpf]")
@@ -53,7 +53,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails invalid email in step 1", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData({ ...user, email: "teste@erro" });
+      UserFormPage.fillPersonalData({ ...user[0], email: "teste@erro" });
     });
 
     cy.get("[aria-invalid=true][name=email]")
@@ -64,7 +64,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails invalid password in step 1", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData({ ...user, password: "teste@erro" });
+      UserFormPage.fillPersonalData({ ...user[0], password: "teste@erro" });
     });
 
     cy.get("[aria-invalid=true][name=password]")
@@ -77,7 +77,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails in step 2", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
+      UserFormPage.fillPersonalData(user[0]);
     });
 
     cy.get("[type=submit]").contains("Próximo").click();
@@ -87,7 +87,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails invalid cep in step 2", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
+      UserFormPage.fillPersonalData(user[0]);
     });
     cy.get("[name=cep]").type("8888510");
     cy.get("[aria-invalid=true][name=cep]")
@@ -98,7 +98,7 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails request cep in step 2", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
+      UserFormPage.fillPersonalData(user[0]);
     });
     cy.get("[name=cep]").type("45454-545");
     cy.get(".Toastify__toast-icon")
@@ -108,8 +108,8 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails in step 3", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
     });
 
     cy.get("[type=submit]").contains("Próximo").click();
@@ -119,9 +119,9 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails in step 3 with many representative", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
-      UserFormPage.fillRepresentativeData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
+      UserFormPage.fillRepresentativeData(user[0]);
     });
 
     cy.get("[type=button]").contains("Anterior").click();
@@ -133,13 +133,13 @@ describe("Unsuccessful user registration flow", () => {
 
   it("Should fails invalid cellphone in step 3", () => {
     cy.fixture("user").then((user) => {
-      const representative = [...user.representative];
+      const representative = [...user[0].representative];
       representative[0].cellphone = "(43) 99845-512";
 
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
       UserFormPage.fillRepresentativeData({
-        ...user,
+        ...user[0],
         representative,
       });
     });
@@ -172,8 +172,8 @@ describe("Possible actions in the successful user registration flow", () => {
 
   it("Should delete a representative", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
     });
 
     cy.get("[type=button]").contains("Adicionar").click();
@@ -182,9 +182,9 @@ describe("Possible actions in the successful user registration flow", () => {
 
   it("Should refuse register user", () => {
     cy.fixture("user").then((user) => {
-      UserFormPage.fillPersonalData(user);
-      UserFormPage.fillAddressData(user);
-      UserFormPage.fillRepresentativeData(user);
+      UserFormPage.fillPersonalData(user[0]);
+      UserFormPage.fillAddressData(user[0]);
+      UserFormPage.fillRepresentativeData(user[0]);
     });
 
     cy.get("[type=submit]").contains("Enviar").click();
